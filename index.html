@@ -1,45 +1,109 @@
 <!DOCTYPE HTML>
-<!--
-	Dimension by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
-	<head>
-		<title>Angelique I. Delarazan</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+  <head>
+    <title>Angelique I. Delarazan</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+    <!-- Custom styles for two-row nav -->
+	<style>
+	.nav-group {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1rem;
+	}
 
-				<!-- Header -->
-					<header id="header">
-						<div class="logo">
-							<a href="https://sites.wustl.edu/complexmemlab/"> <img src="images/ComplexML-brain_w.png" height="50"> </a> </span>
-						</div>
-						<div class="content">
-							<div class="inner">
-								<h1>Angelique I. Delarazan</h1>
-								<p> PhD Graduate Student <br />
-									Psychological & Brain Sciences | Washington University in St. Louis <br /> 
-								</p>
-							</div>
-						</div>
-						<nav>
-							<ul>
-								<li><a href="#about">About Me</a></li>
-								<li><a href="#research">Research</a></li>
-								<!-- <li><a href="#cv">Blog</a></li> -->
-								<li><a href="#contact">Contact</a></li>
-								<!--<li><a href="#elements">Elements</a></li>-->
-							</ul>
-						</nav>
-					</header>
+	.nav-row {
+		display: flex;
+		justify-content: center;
+		gap: 0; /* Remove gap between buttons */
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	.nav-row li {
+		margin: 0;
+		flex: 1; /* Make buttons equal width */
+	}
+
+	.nav-row li a {
+		display: block; /* Change from inline-block to block */
+		border: 1px solid #fff;
+		padding: 1em 2em;
+		text-transform: uppercase;
+		text-decoration: none;
+		font-weight: bold;
+		white-space: nowrap;
+		text-align: center;
+		box-sizing: border-box; /* Ensure consistent sizing */
+	}
+
+	/* Remove left border from all buttons except the first */
+	.nav-row li:not(:first-child) a {
+		border-left: none;
+	}
+
+	/* Override any conflicting styles from main.css */
+	nav ul li a,
+	#nav ul li a {
+		border-left: none !important;
+	}
+
+	/* Ensure the first button in each row keeps its left border */
+	.nav-row li:first-child a {
+		border-left: 1px solid #fff !important;
+	}
+
+	.secondary-nav li {
+		flex: 1 1 200px;
+		max-width: 200px;
+	}
+	</style>
+
+  </head>
+  <body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+      <!-- Header -->
+      <header id="header">
+        <div class="logo">
+          <a href="https://sites.wustl.edu/complexmemlab/">
+            <img src="images/ComplexML-brain_w.png" height="50" alt="Lab Logo" />
+          </a>
+        </div>
+        <div class="content">
+          <div class="inner">
+            <h1>Angelique I. Delarazan</h1>
+            <p>PhD Graduate Student<br />
+              Psychological & Brain Sciences | Washington University in St. Louis
+            </p>
+          </div>
+        </div>
+
+        <!-- Two-Row Navigation -->
+        <nav>
+          <div class="nav-group">
+            <!-- First Row -->
+            <ul class="nav-row">
+              <li><a href="#about">About Me</a></li>
+              <li><a href="#research">Research</a></li>
+              <li><a href="#teaching">Teaching</a></li>
+            </ul>
+
+            <!-- Second Row -->
+            <ul class="nav-row secondary-nav">
+              <li><a href="#cv">CV</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+        </nav>
+      </header>
 
 				<!-- Main -->
 					<div id="main">
@@ -62,13 +126,15 @@
 								<h2 class="major">Research</h2>
 								<p>My research interests span cognitive psychology and cognitive neuroscience with a focus on memory for naturalistic experiences and their neural underpinnings. An overwhelming amount of psychological memory studies have relied on simplistic stimuli such as learning a sequence of items (for example, a list of words) and later retrieving them. While these studies remain foundational and necessary to our understanding of memory processes, the real world encompasses so much more and consists of different components including the individual items, location, perceptual, and narrative information. I am particularly interested in assessing exactly how the components of memories are organized and how the neural mechanisms that support them operate at its core.</p>
 								<span class="image main"><img src="images/research1.jpg" alt="" /></span>
-								<p><center><a href="https://wustl.box.com/s/h78f327fxru0ub10ww1bnx1gya6froxw"><b>CURRICULUM VITAE</b></a></center></p>
-								<p><b>PUBLICATIONS</b></p>
+								<p><center><b>PUBLICATIONS</b></center></p>
+								<p><a href="https://osf.io/preprints/psyarxiv/paq8e_v1"><b>Delarazan A. I.</b>, March, K., Markantonakis, E., Dy, J. & Reagh Z.M., (under review). Aging shifts recall of naturalistic events from temporal to topic organization.</a></p>
+								<p><a href="https://osf.io/preprints/psyarxiv/dfxbg_v2"><b>Delarazan A. I.</b>, Bosak, E., Cohn-Sheehy, B.I., Foureaux-Lee, V., Zacks J.M. & Reagh, Z.M. (in press). Narrative coherence warps the timeline of recalled naturalistic events. Journal of Experimental Psychology: Learning, Memory, and Cognition.</a></p>
 								<p><a href="https://learnmem.cshlp.org/content/30/2/48.short"><b>Delarazan, A. I.</b>, Ranganath, C., & Reagh, Z. M. (2023). Aging impacts memory for perceptual, but not narrative, event details. Learning & Memory, 30(2), 48-54</a></p>
 								<p><a href="https://link.springer.com/article/10.3758/s13421-021-01178-x">Cohn-Sheehy, B. I., <b>Delarazan, A. I.</b>, Crivelli-Decker, J. E., Reagh, Z. M., Mundada, N. S., Yonelinas, A. P., ... & Ranganath, C. (2022). Narratives bridge the divide between distant events in episodic memory. Memory & cognition, 50(3), 478-494.</a></p>
 								<p><a href="https://www.cell.com/current-biology/pdf/S0960-9822(21)01253-7.pdf">Cohn-Sheehy, B. I., <b>Delarazan, A. I.</b>, Reagh, Z. M., Crivelli-Decker, J. E., Kim, K., Barnett, A. J., ... & Ranganath, C. (2021). The hippocampus constructs narrative memories across distant events. Current Biology, 31(22), 4935-4945.</a></p>
 								<p><a href="https://www.nature.com/articles/s41467-020-17713-4">Reagh, Z. M., <b>Delarazan, A. I.</b>, Garber, A., & Ranganath, C. (2020). Aging alters neural activity at event boundaries in the hippocampus and Posterior Medial network. Nature communications, 11(1), 1-12.</a></p>
-								<p><b>SELECTED TALKS AND PRESENTATIONS</b></p>
+								<p><center><b>SELECTED TALKS AND PRESENTATIONS</b></center></p>
+								<p><b>Delarazan, A. I.</b>, Bhoga, T., March, K., & Reagh, Z. M. (April 2025). The roles of event content and recall specificity in shaping representations of naturalistic narratives. Poster presented at the Cognitive Neuroscience Society (CNS) Conference. Boston, MA.</p>
 								<p><b>Delarazan, A. I.</b>, Elena Bosak, Jeffrey M. Zacks, Zachariah M. Reagh (April 2024). Narrative coherence bends the arrow of time when recalling naturalistic events. Cognitive Neuroscience Society (CNS) Conference. Toronto, CA.</p>
 								<p><b>Delarazan, A. I.</b>, (March 2024). Age-related changes in representing and remembering complex events. 3 Minute Thesis (3MT) Competition. St. Louis, MO.</p>
 								<p>Lee, V., <b>Delarazan, A. I.</b>, Reagh, Z.M. (October 2023). Differences in narrative memory for cross lingual processing in Spanish-English bilinguals. VII Medical Organization for Latino Advancement (MOLA) Latino Health Symposium. Chicago, IL.</p>
@@ -80,11 +146,55 @@
 								<p><b>Delarazan, A. I.</b>, Karagoz, A. B., Montchal, M. E., Yassa, M. A., Ranganath, C., & Reagh, Z. M., (2021). Hippocampal and entorhinal contributions to naturalistic event context reinstatement. Society for Neuroscience (SfN) Conference in Chicago, IL.</p>
 							</article>
 
+						<!-- Teaching -->
+							<article id="teaching">
+								<h2 class="major">Teaching</h2>
+								<p>What makes an experience memorable? Why do some experiences remain etched in our minds while others fade away? These questions have guided both my research and approach to teaching. As a memory researcher, I studied how we comprehend and retain experiences that reflect the real-world using naturalistic stimuli such as films and narratives. Across my experiments, I learned that we tend to remember moments that are engaging, meaningful, and reinforced through ongoing learning. The same principles that shape what we remember also emerge in the classroom. More importantly, these same principles form the foundation of my teaching philosophy. I believe students learn best when they actively engage with the material, connect it to their own experiences, and build on their prior knowledge over time. I aim to provide a learning experience that leave students not only with a strong foundation in psychology and cognitive neuroscience, but with the confidence and curiosity to carry those ideas forward long after the course ends.</p>
+								<!-- <span class="image main"><img src="images/research1.jpg" alt="" /></span>
+								<p><center><a href="https://wustl.box.com/s/h78f327fxru0ub10ww1bnx1gya6froxw"><b>CURRICULUM VITAE</b></a></center></p> -->
+								<p><center><b>COURSES</b></center></p>
+								<div style="margin-bottom: 1.5em;">
+									<b>Role(s):</b> Instructor; Co-Instructor<br>
+									<b>Course:</b> Psych 100B Introduction to Psychology<br>
+									<b>Institution:</b> Washington University in St. Louis<br>
+									<b>Course Description:</b> A survey and analysis of concepts, theory, and research covering the areas of biological psychology, human development, learning, memory, social psychology, and mental disorders and their treatment. This is a general survey course designed to introduce students to the diversity of topics, research methods, and theories that comprise the study of mind and behavior.
+								</div>
+
+								<div style="margin-bottom: 1.5em;">
+									<b>Role(s):</b> Instructor<br>
+									<b>Course:</b> Psych 102 Contemporary Issues in Psychology<br>
+									<b>Institution:</b> Washington University in St. Louis<br>
+									<b>Course Description:</b> Seminar course that enables students to explore several of the ideas and issues in contemporary psychology. Students familiarize themselves with critical aspects of the issue and discuss and critically evaluate the pros and cons of each side.
+								</div>
+
+								<div style="margin-bottom: 1.5em;">
+									<b>Role(s):</b> Instructor; Assistant to Instructor<br>
+									<b>Course:</b> Psych 301 Experimental Psychology<br>
+									<b>Institution:</b> Washington University in St. Louis<br>
+									<b>Course Description:</b> A course that provides training in the logic, techniques, and design of psychology experiments. Topics include experimental design and control, library research, quantitative treatment of data, graphical presentation of results, and clarity of scientific writing. Lectures focus on general principles of experimentation, whereas the laboratory sections introduce a range of psychological phenomena through hands-on experience in experimentation.
+								</div>
+
+								<div style="margin-bottom: 1.5em;">
+									<b>Role(s):</b> Assistant to Instructor<br>
+									<b>Course:</b> Psych 380 Human Learning and Memory<br>
+									<b>Institution:</b> Washington University in St. Louis<br>
+									<b>Course Description:</b> A survey of issues related to the encoding, storage, and retrieval of information in humans. Topics include memory improvement strategies, people with extraordinary memories, memory illusions and distortions, among other topics.
+								</div>
+
+								<div style="margin-bottom: 1.5em;">
+									<b>Role(s):</b> Co-Instructor; Assistant to Instructor<br>
+									<b>Course:</b> Psych 3604 Cognitive Neuroscience<br>
+									<b>Institution:</b> Washington University in St. Louis; Washington University in St. Louis Continuing and Professional Studies (CAPS)<br>
+									<b>Course Description:</b> A general introduction to the underlying principles and mechanisms of brain function that give rise to complex human cognitive behavior. Emphasis will be placed on how emerging methods and approaches from both neuroscience and cognitive psychology have been integrated to yield new insights into the organization and structure of higher mental processes. Topics include perception, attention, memory, language, and executive control.
+								</div>
+								
+							</article>
+
 						<!-- CV -->
 							<article id="cv">
 								<h2 class="major">Curriculum Vitae</h2>
-								<span class="image main"><img src="images/pic03.jpg" alt="" /></span>
-								<p>Lorem ipsum dolor sit amet, consectetur et adipiscing elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices. Aliquam libero et malesuada fames ac ante ipsum primis in faucibus. Cras viverra ligula sit amet ex mollis mattis lorem ipsum dolor sit amet.</p>
+								<embed src="images/Delarazan_CV_June2025.pdf" type="application/pdf" width="100%" height="800px" />
+								<p><center><a href="images/Delarazan_CV_June2025.pdf" target="_blank"></a></center></p>
 							</article>
 
 						<!-- Contact -->
