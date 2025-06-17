@@ -23,11 +23,14 @@
 		list-style: none;
 		padding: 0;
 		margin: 0;
+		width: 100%;
+		max-width: 600px; /* Limit maximum width */
 	}
 
 	.nav-row li {
 		margin: 0;
 		flex: 1; /* Make buttons equal width */
+		min-width: 0; /* Allow buttons to shrink */
 	}
 
 	.nav-row li a {
@@ -58,9 +61,77 @@
 		border-left: 1px solid #fff !important;
 	}
 
+	.secondary-nav {
+		max-width: 400px; /* Smaller max width for second row */
+	}
+
 	.secondary-nav li {
-		flex: 1 1 200px;
+		flex: 1 1 150px;
 		max-width: 200px;
+	}
+
+	/* Mobile responsiveness */
+	@media screen and (max-width: 480px) {
+		.nav-row li a {
+			padding: 0.8em 1em;
+			font-size: 0.9em;
+		}
+		
+		.secondary-nav {
+			max-width: 300px;
+		}
+		
+		.secondary-nav li {
+			flex: 1 1 120px;
+		}
+	}
+
+	@media screen and (max-width: 360px) {
+		.nav-row li a {
+			padding: 0.7em 0.8em;
+			font-size: 0.8em;
+		}
+	}
+
+	/* PDF viewer styles */
+	.pdf-container {
+		width: 100%;
+		height: 600px;
+		border: 1px solid #ccc;
+		margin: 1em 0;
+		background: #f5f5f5;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+	}
+
+	.pdf-fallback {
+		text-align: center;
+		padding: 2em;
+	}
+
+	.pdf-fallback a {
+		display: inline-block;
+		padding: 1em 2em;
+		background: #fff;
+		color: #000;
+		text-decoration: none;
+		border: 2px solid #000;
+		margin: 0.5em;
+		font-weight: bold;
+	}
+
+	.pdf-fallback a:hover {
+		background: #000;
+		color: #fff;
+	}
+
+	/* Mobile PDF adjustments */
+	@media screen and (max-width: 768px) {
+		.pdf-container {
+			height: 400px;
+		}
 	}
 	</style>
 
@@ -112,7 +183,7 @@
 							<article id="about">
 								<h2 class="major">About Me</h2>
 								<span class="image circle"><img src="images/aidelarazan1.jpg"></span>
-								<p>Growing up in a poverty-stricken community where schools were underperforming, and test scores were far below the state average, I never had the luxury of exploring the “what-ifs” of becoming a scientist. The schools in my community encouraged a mentality of survival rather than academic excellence, but despite a system that fought to keep me in the same neighborhood, I strove to break free from the cycle. I was accepted to top universities after high school, but my parents were unable to financially support me in this endeavor. I pursued nursing because a program was offered at a nearby community college and its expense was minuscule compared to a four-year institution. </p>
+								<p>Growing up in a poverty-stricken community where schools were underperforming, and test scores were far below the state average, I never had the luxury of exploring the "what-ifs" of becoming a scientist. The schools in my community encouraged a mentality of survival rather than academic excellence, but despite a system that fought to keep me in the same neighborhood, I strove to break free from the cycle. I was accepted to top universities after high school, but my parents were unable to financially support me in this endeavor. I pursued nursing because a program was offered at a nearby community college and its expense was minuscule compared to a four-year institution. </p>
 								<p>I attended Napa Valley College and completed training that allowed me to work in a nursing facility that helps patients with physical and cognitive impairments. My interactions with these patients always left me wondering how the physical deterioration of their brain could affect their entire being. I became curious to understand the mechanisms that underlie their behaviors, so I engrossed myself in the interdisciplinary fields of psychology and cognitive neuroscience. My pursuit of these disciplines allowed me to develop diverse theoretical and statistical skillsets which would enable me to take on a distinct challenge: disentangling the unknown, complex relationships between brain, mind, and behavior. </p>
 								<p>My growing interest in psychology and cognitive neuroscience led me to transfer to the University of California, Davis. The community college I attended did not provide me the opportunity to become involved in scientific research, so I sought research assistantships in two distinct labs upon transferring: <a href="https://www.alisonledgerwood.com/lab.html"> Alison Ledgerwood's Attitudes, Group, and Identities Lab </a> and <a href="https://dml.ucdavis.edu/"> Dr. Charan Ranganath's Dynamic Memory Lab</a>. Under Dr. Ledgerwood's supervision, my honors thesis set out to identify individual differences in decision making using a spin-off of classical framing effects paradigms. As an undergraduate research assistant in Dr. Ranganath's, I was involved in identifying and manually tracing anatomical regions of interests for further analyses. This initial project provided exposure to fMRI techniques and enabled me to purse more advanced experimental work.</p>
 								<p>I was hired as a full-time researcher in Dr. Ranganath's lab upon graduation and was drawn to a line of memory research investigating how we construct and retrieve real world memories. I collaborated with a graduate student in a series of behavioral and fMRI experiments examining the memories for narrative events experienced at different times (<a href="https://www.cell.com/current-biology/pdf/S0960-9822(21)01253-7.pdf">Cohn-Sheehy, Delarazan et al., 2021</a>; <a href="https://link.springer.com/article/10.3758/s13421-021-01178-x">Cohn-Sheehy, Delarazan et al., 2022</a>, Delarazan et al., in prep). I also worked with a post-doctoral research fellow to investigate age-related cognitive decline using naturalistic stimuli (<a href="https://www.nature.com/articles/s41467-020-17713-4">Reagh et al., 2020</a>).</p>
@@ -193,8 +264,53 @@
 						<!-- CV -->
 							<article id="cv">
 								<h2 class="major">Curriculum Vitae</h2>
-								<embed src="images/Delarazan_CV_June2025.pdf" type="application/pdf" width="100%" height="800px" />
-								<p><center><a href="images/Delarazan_CV_June2025.pdf" target="_blank"></a></center></p>
+								<div class="pdf-container">
+									<div class="pdf-fallback">
+										<p><strong>View or Download CV</strong></p>
+										<p>Click the button below to view the PDF in a new tab or download it:</p>
+										<a href="images/Delarazan_CV_June2025.pdf" target="_blank">Open CV (PDF)</a>
+										<a href="images/Delarazan_CV_June2025.pdf" download>Download CV</a>
+									</div>
+								</div>
+								<script>
+									// Try to embed PDF, fallback to links if not supported
+									document.addEventListener('DOMContentLoaded', function() {
+										const container = document.querySelector('.pdf-container');
+										const fallback = document.querySelector('.pdf-fallback');
+										
+										// Check if PDF embedding is supported
+										const canEmbedPDF = 'PDFObject' in window || navigator.pdfViewerEnabled;
+										
+										// Try to create an embed element
+										const embed = document.createElement('embed');
+										embed.src = 'images/Delarazan_CV_June2025.pdf';
+										embed.type = 'application/pdf';
+										embed.width = '100%';
+										embed.height = '100%';
+										embed.style.border = 'none';
+										
+										// Hide fallback and show embed
+										embed.onload = function() {
+											fallback.style.display = 'none';
+											container.appendChild(embed);
+										};
+										
+										// If embed fails, keep fallback visible
+										embed.onerror = function() {
+											// Fallback is already visible
+										};
+										
+										// Try to load the embed
+										container.appendChild(embed);
+										
+										// Remove embed if it doesn't load within 3 seconds
+										setTimeout(function() {
+											if (embed.parentNode && fallback.style.display !== 'none') {
+												embed.remove();
+											}
+										}, 3000);
+									});
+								</script>
 							</article>
 
 						<!-- Contact -->
@@ -338,160 +454,4 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 												<tr>
 													<td>Item Four</td>
 													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-
-									<h4>Alternate</h4>
-									<div class="table-wrapper">
-										<table class="alt">
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-								</section>
-
-								<section>
-									<h3 class="major">Buttons</h3>
-									<ul class="actions">
-										<li><a href="#" class="button primary">Primary</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button">Default</a></li>
-										<li><a href="#" class="button small">Small</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-										<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-									</ul>
-									<ul class="actions">
-										<li><span class="button primary disabled">Disabled</span></li>
-										<li><span class="button disabled">Disabled</span></li>
-									</ul>
-								</section>
-
-								<section>
-									<h3 class="major">Form</h3>
-									<form method="post" action="#">
-										<div class="fields">
-											<div class="field half">
-												<label for="demo-name">Name</label>
-												<input type="text" name="demo-name" id="demo-name" value="" placeholder="Jane Doe" />
-											</div>
-											<div class="field half">
-												<label for="demo-email">Email</label>
-												<input type="email" name="demo-email" id="demo-email" value="" placeholder="jane@untitled.tld" />
-											</div>
-											<div class="field">
-												<label for="demo-category">Category</label>
-												<select name="demo-category" id="demo-category">
-													<option value="">-</option>
-													<option value="1">Manufacturing</option>
-													<option value="1">Shipping</option>
-													<option value="1">Administration</option>
-													<option value="1">Human Resources</option>
-												</select>
-											</div>
-											<div class="field half">
-												<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-												<label for="demo-priority-low">Low</label>
-											</div>
-											<div class="field half">
-												<input type="radio" id="demo-priority-high" name="demo-priority">
-												<label for="demo-priority-high">High</label>
-											</div>
-											<div class="field half">
-												<input type="checkbox" id="demo-copy" name="demo-copy">
-												<label for="demo-copy">Email me a copy</label>
-											</div>
-											<div class="field half">
-												<input type="checkbox" id="demo-human" name="demo-human" checked>
-												<label for="demo-human">Not a robot</label>
-											</div>
-											<div class="field">
-												<label for="demo-message">Message</label>
-												<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-											</div>
-										</div>
-										<ul class="actions">
-											<li><input type="submit" value="Send Message" class="primary" /></li>
-											<li><input type="reset" value="Reset" /></li>
-										</ul>
-									</form>
-								</section>
-
-							</article>
-
-					</div>
-
-				<!-- Footer -->
-					<footer id="footer">
-						<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-					</footer>
-
-			</div>
-
-		<!-- BG -->
-			<div id="bg"></div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
-</html>
+													<td>19.99</t
